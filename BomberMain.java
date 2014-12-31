@@ -31,7 +31,7 @@ public class BomberMain extends JFrame {
         add(b);
         
         
-        setSize(400, 400);
+        setSize(600, 650);
         setResizable(false);
         setTitle("BomberButti");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
