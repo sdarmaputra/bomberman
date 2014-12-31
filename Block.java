@@ -120,10 +120,10 @@ public class Block {
      */
     public void draw(Graphics g) {
         if (this.destructable) {
-            g.drawImage(map.game.getImages().getBlockDyn(), x*10, y*10, null);
+            g.drawImage(map.game.getImages().getBlockDyn(), x*20, y*20, null);
         }
         else {
-            g.drawImage(map.game.getImages().getBlockStat(), x*10, y*10, null);
+            g.drawImage(map.game.getImages().getBlockStat(), x*20, y*20, null);
         }
     }
 }
