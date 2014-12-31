@@ -113,17 +113,4 @@ public class Block {
             return false;
         }
     }
-    
-    /**
-     * Here the block is drawn
-     * @param g: Contains the Graphics object to where it needs to be drawn
-     */
-    public void draw(Graphics g) {
-        if (this.destructable) {
-            g.drawImage(map.game.getImages().getBlockDyn(), x*20, y*20, null);
-        }
-        else {
-            g.drawImage(map.game.getImages().getBlockStat(), x*20, y*20, null);
-        }
-    }
 }
