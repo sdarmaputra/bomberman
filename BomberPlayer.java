@@ -361,17 +361,4 @@ public class BomberPlayer {
             }
         }
     }
-    
-    /**
-    *Here the player is drawn to the program
-    * @param g: Contains the Graphics object to where it needs to be drawn
-    */
-    public void draw(Graphics g) {
-        if (id == 1) {
-            g.drawImage(game.getImages().getPlayer(), x*20, y*20, null);
-        }
-        else {
-            g.drawImage(game.getImages().getPlayer2(), x*20, y*20, null);
-        }
-    }
 }
