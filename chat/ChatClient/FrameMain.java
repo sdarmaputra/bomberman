@@ -30,7 +30,7 @@ public class FrameMain extends javax.swing.JFrame {
     public FrameMain() throws IOException {
         initComponents();
         
-        this.sock = new Socket("localhost", 6060);
+        this.sock = new Socket("127.0.0.1", 6060);
         this.ous = new ObjectOutputStream(this.sock.getOutputStream());
         this.ois = new ObjectInputStream(this.sock.getInputStream());
         
@@ -52,6 +52,7 @@ public class FrameMain extends javax.swing.JFrame {
         txtMsg = new javax.swing.JTextField();
         btnSend = new javax.swing.JButton();
         txtPengirim = new javax.swing.JTextField();
+        txtPenerima = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +73,18 @@ public class FrameMain extends javax.swing.JFrame {
             }
         });
 
+        txtPengirim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPengirimActionPerformed(evt);
+            }
+        });
+
+        txtPenerima.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPenerimaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -80,11 +93,12 @@ public class FrameMain extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
+                    .addComponent(txtPengirim)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSend, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
-                    .addComponent(txtPengirim))
+                    .addComponent(txtPenerima))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -92,13 +106,15 @@ public class FrameMain extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(txtPengirim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(txtPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSend))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -112,7 +128,8 @@ public class FrameMain extends javax.swing.JFrame {
         try {
             Message msg = new Message();
             msg.setDari(this.txtPengirim.getText());
-            msg.setUntuk("Bobo");
+            msg.setUntuk(this.txtPenerima.getText());
+            //msg.setUntuk("Bobo");
             msg.setIsi(this.txtMsg.getText());
             
             this.ous.writeObject(msg);
@@ -124,6 +141,14 @@ public class FrameMain extends javax.swing.JFrame {
             Logger.getLogger(FrameMain.class.getName()).log(Level.SEVERE, null, ex);
         }
     }                                       
+
+    private void txtPengirimActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
+    private void txtPenerimaActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
 
     /**
      * @param args the command line arguments
@@ -168,6 +193,7 @@ public class FrameMain extends javax.swing.JFrame {
     private javax.swing.JButton btnSend;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtMsg;
+    private javax.swing.JTextField txtPenerima;
     private javax.swing.JTextField txtPengirim;
     private javax.swing.JTextArea txtReceived;
     // End of variables declaration                   
