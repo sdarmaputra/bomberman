@@ -368,10 +368,10 @@ public class BomberPlayer {
     */
     public void draw(Graphics g) {
         if (id == 1) {
-            g.drawImage(game.getImages().getPlayer(), x*10, y*10, null);
+            g.drawImage(game.getImages().getPlayer(), x*20, y*20, null);
         }
         else {
-            g.drawImage(game.getImages().getPlayer2(), x*10, y*10, null);
+            g.drawImage(game.getImages().getPlayer2(), x*20, y*20, null);
         }
     }
 }
