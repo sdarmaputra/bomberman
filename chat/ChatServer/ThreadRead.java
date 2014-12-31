@@ -48,6 +48,7 @@ public class ThreadRead extends Thread {
         {
             try {
                 msg = (Message) this.oisClient.readObject();
+                this.setNama(msg.getDari());
                 this.listen.sendMessage(msg);
             } catch (IOException ex) {
                 Logger.getLogger(ThreadRead.class.getName()).log(Level.SEVERE, null, ex);
@@ -74,7 +75,7 @@ public class ThreadRead extends Thread {
     public String getNama() {
         return nama;
     }
-
+    
     /**
      * @param nama the nama to set
      */
