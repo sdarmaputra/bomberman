@@ -14,17 +14,17 @@ public class BomberImages extends JPanel {
      * Default constructor
      */
     public BomberImages() {
-        block_dyn = Toolkit.getDefaultToolkit().getImage(getClass().getResource("dynblock.gif"));
-        block_stat = Toolkit.getDefaultToolkit().getImage(getClass().getResource("staticblock.gif"));
-        strike_mid = Toolkit.getDefaultToolkit().getImage(getClass().getResource("strike_mid.gif"));
-        strike_hor = Toolkit.getDefaultToolkit().getImage(getClass().getResource("strike_horizontal.gif"));
-        strike_ver = Toolkit.getDefaultToolkit().getImage(getClass().getResource("strike_vertical.gif"));
-        player = Toolkit.getDefaultToolkit().getImage(getClass().getResource("char.gif"));
-        player2 = Toolkit.getDefaultToolkit().getImage(getClass().getResource("char2.gif"));
-        bomb = Toolkit.getDefaultToolkit().getImage(getClass().getResource("bomb.gif"));
-        bonus_bomb = Toolkit.getDefaultToolkit().getImage(getClass().getResource("bonus_bomb.gif"));
-        bonus_strike = Toolkit.getDefaultToolkit().getImage(getClass().getResource("bonus_expandstrike.gif"));
-        bonus_speed = Toolkit.getDefaultToolkit().getImage(getClass().getResource("bonus_speed.gif"));
+        block_dyn = Toolkit.getDefaultToolkit().getImage(getClass().getResource("softbrick.gif"));
+        block_stat = Toolkit.getDefaultToolkit().getImage(getClass().getResource("hardbrick.png"));
+        strike_mid = Toolkit.getDefaultToolkit().getImage(getClass().getResource("flame.png"));
+        strike_hor = Toolkit.getDefaultToolkit().getImage(getClass().getResource("flame.png"));
+        strike_ver = Toolkit.getDefaultToolkit().getImage(getClass().getResource("flame.png"));
+        player = Toolkit.getDefaultToolkit().getImage(getClass().getResource("man1.png"));
+        player2 = Toolkit.getDefaultToolkit().getImage(getClass().getResource("man2.png"));
+        bomb = Toolkit.getDefaultToolkit().getImage(getClass().getResource("bom.png"));
+        bonus_bomb = Toolkit.getDefaultToolkit().getImage(getClass().getResource("bombpu.png"));
+        bonus_strike = Toolkit.getDefaultToolkit().getImage(getClass().getResource("expand.png"));
+        bonus_speed = Toolkit.getDefaultToolkit().getImage(getClass().getResource("speedpu.png"));
         loadImages(); //Afbeeldingen laden
     }
     
