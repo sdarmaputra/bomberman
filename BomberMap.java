@@ -83,11 +83,17 @@ public class BomberMap{
         }
         
         //Inflatable blocks that can contain bonuses
+        int minVal = 0;
+        int maxVal = 27;
+        int randomVali;
+        int randomValj;
         for (int i = 0; i <= mapWidth-1; i++) {
             for (int j = 0; j <= mapHeight-1; j++) {
-                if (((!((i<10) && (j<10)))) && (!((i>18) && (j>18)))) { //Inflatable blocks that can contain bonuses
-                    if (blockGrid[i][j] == null) {
-                        blockGrid[i][j] = new Block(this, i,j,true);
+                randomVali = minVal + (int)(Math.random() * ((maxVal - minVal) +1));
+                randomValj = minVal + (int)(Math.random() * ((maxVal - minVal) +1));
+                if (((!((randomVali<3) && (randomValj<3)))) && (!((randomVali>25) && (randomValj>25)))){ //Inflatable blocks that can contain bonuses
+                    if (blockGrid[randomVali][randomValj] == null) {
+                        blockGrid[randomVali][randomValj] = new Block(randomVali,randomValj,true);
                     }
                 }
             }
