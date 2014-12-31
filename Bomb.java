@@ -169,12 +169,4 @@ public class Bomb {
             exploded = true; //Bomb has exploded
         }
     }
-    
-    /**
-     * Here the bomb is signed
-     * @param g: Contains the Graphics object to where it needs to be drawn
-     */
-    void draw(Graphics g) {
-        g.drawImage(player.game.getImages().getBomb(), x*20, y*20, null);
-    }
 }
