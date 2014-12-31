@@ -146,7 +146,7 @@ public class BomberGame extends JPanel implements ActionListener {
         }
         
         if (gameOver) {
-            g.drawString("Game Over! The Winner is: " +winner.getName(), 20, 305);
+            g.drawString("Game Over! The Winner is: " +winner.getName(), 20, 605);
         }
     }
 }
