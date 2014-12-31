@@ -138,31 +138,4 @@ public class Bonus {
         }
         this.rendeemed = true; //bonus 'worthless' make so that it can not be recorded again
     }
-    
-    /**
-     * Here, the bonus will be drawn
-     * @param g: Contains the Graphics object to where there might be need signed
-     */
-    public void draw(Graphics g) {
-        Image I;
-        boolean noBonus = false;
-        I = map.game.getImages().getBonusBomb();
-        switch(type) {
-            case 1:
-                I = map.game.getImages().getBonusBomb();
-                break;
-            case 2:
-                I = map.game.getImages().getBonusStrike();
-                break;
-            case 3:
-                I = map.game.getImages().getBonusSpeed();
-                break;
-            default:
-                noBonus = true;
-        }
-        
-        if (!noBonus) {
-            g.drawImage(I, x*20, y*20, null);
-        }
-    }
 }
