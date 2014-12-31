@@ -175,6 +175,6 @@ public class Bomb {
      * @param g: Contains the Graphics object to where it needs to be drawn
      */
     void draw(Graphics g) {
-        g.drawImage(player.game.getImages().getBomb(), x*10, y*10, null);
+        g.drawImage(player.game.getImages().getBomb(), x*20, y*20, null);
     }
 }
