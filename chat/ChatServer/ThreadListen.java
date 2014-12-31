@@ -4,14 +4,12 @@
  */
 package chatserver;
 
-import com.sun.xml.internal.messaging.saaj.soap.ver1_1.Message1_1Impl;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.net.ssl.SSLServerSocket;
 import msg.Message;
 
 /**
@@ -51,12 +49,31 @@ public class ThreadListen extends Thread {
     public void sendMessage(Message msg)
     {
         System.out.println(msg.getDari() + ":" + msg.getIsi());
+        
+        for(int i=0; i<this.alClient.size(); i++){
+            System.out.println("client aktif " + this.alClient.get(i).getNama());
+        }
+        
+        String pesan = " [B] ";
+        pesan = pesan.concat(msg.getIsi());
         for(int i=0; i<this.alClient.size(); i++)
         {
-            //if(this.alClient.get(i).getNama().equals(msg.getUntuk()))
+            //System.out.println("masuk for");
+            if(this.alClient.get(i).getNama().equals(msg.getUntuk()))
             {
+                pesan = " [P] ";
+                pesan = pesan.concat(msg.getIsi());
+                msg.setIsi(pesan);
+                System.out.println("client mengirim pesan: " + msg.getIsi());
                 this.alClient.get(i).send(msg);
+                break;
              //   return;
+            }
+            else if(msg.getUntuk().equals("all"))
+            {
+                msg.setIsi(pesan);
+                System.out.println("client mengirim pesan: " + msg.getIsi());
+                this.alClient.get(i).send(msg);
             }
         }
     }
