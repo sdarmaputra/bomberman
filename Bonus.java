@@ -162,7 +162,7 @@ public class Bonus {
         }
         
         if (!noBonus) {
-            g.drawImage(I, x*10, y*10, null);
+            g.drawImage(I, x*20, y*20, null);
         }
     }
 }
